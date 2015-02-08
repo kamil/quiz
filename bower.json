@@ -1,0 +1,15 @@
+{
+  "name": "quiz",
+  "version": "0.0.0",
+  "authors": [
+    "Kamil Załęski <kamil.zaleski@gmail.com>"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
