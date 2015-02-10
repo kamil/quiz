@@ -1,0 +1,46 @@
+<div class="modal-header">
+	<strong class="modal-title">Question Form</strong>
+</div>
+<div class="modal-body">
+	<form name="questionForm">
+		<div class="form-group">
+			<label for="question">Question</label>
+			<textarea rows="6" id="question" name="question" ng-model="question.question" type="text" placeholder="Question body" class="form-control" ng-class="{error: question.question.$invalid && !question.question.$pristine}" required /></textarea>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="form-group">
+					<label for="language">Language</label>
+					<select class="form-control" id="language" ng-model="question.language" ng-options="c.name as c.name for c in language_array">
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="form-group">
+					<label for="difficulty">Difficulty</label>
+					<select class="form-control" id="difficulty" ng-model="question.difficulty" ng-options="c.name as c.name for c in difficulty_array">
+					</select>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel">
+			<ul class="nav nav-tabs" role="tablist">
+				<li ng-repeat="(key,answer) in question.answers" role="presentation" ng-class="{active: key==1}">
+					<a href data-target="#answerTab{{key}}" role="tab" data-toggle="tab">Answer #{{key}}</a>
+				</li>
+			</ul>
+			<div class="tab-content" style="">
+				<div ng-repeat="(key,answer) in question.answers" role="tabpanel" class="tab-pane" ng-class="{active: key==1}" id="answerTab{{key}}">
+					<div  class="form-group">
+						<textarea style="border-top:0;" rows="5" id="answerTab{{key}}" name="answer_{{key}}" ng-model="question.answers[key]" type="text" placeholder="Answer #{{key}}" class="form-control answers" required /></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button ng-click="save()" ng-if="question.$id" ng-disabled="question.$invalid || !question.question" class="btn btn-primary"><i class="icon-white icon-plus"></i> Save</button>
+	<button ng-click="add()" type="submit" ng-if="!question.$id"  ng-disabled="questionForm.$invalid" class="btn btn-primary"><i class="icon-white icon-plus"></i> Add</button>
+	<button ng-click="cancel()" class="btn">Cancel</button>
+</div>
