@@ -5,7 +5,7 @@ angular.module('quiz')
 
             $scope.question = $firebase(new Firebase(fbURL + 'question' + '/' + questionId)).$asObject();
 
-            $scope.markedQuestion = ''
+            $scope.markedQuestion = '';
 
             $scope.question.$watch(function() {
                 $scope.markedQuestion = marked($scope.question.question);
@@ -15,4 +15,4 @@ angular.module('quiz')
                 $location.path('/');
             };
         }
-)
+);

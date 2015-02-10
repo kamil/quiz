@@ -7,21 +7,6 @@ angular.module('quiz')
 
         $scope.questions = $firebase(new Firebase(fbURL + 'question')).$asArray();
 
-        // var auth = $firebaseAuth(new Firebase(fbURL));
-
-        // auth.$onAuth(function(authData) {
-        //     if (!authData) {
-        //         auth.$authWithOAuthPopup("google").then(function(authData) {
-        //             console.log("Logged in as:", authData.uid);
-        //         }).catch(function(error) {
-        //             console.error("Authentication failed: ", error);
-        //         });
-        //     } else {
-        //         $scope.auth = authData;
-        //     }
-        // });
-
-
         $scope.preview = function(questionId) {
             $location.path('/preview/' + questionId);
         };
@@ -101,8 +86,6 @@ angular.module('quiz')
                     question: "",
                     answers: { 1: "", 2: "", 3: "", 4: "" }
                 };
-
-                console.log($scope.question)
             }
 
 
