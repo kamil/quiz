@@ -7,6 +7,10 @@
         .config(function($routeProvider, $locationProvider) {
             // $locationProvider.html5Mode(true);
             $routeProvider
+                .when('/login', {
+                    controller: 'LoginCtrl',
+                    templateUrl: 'views/login.html'
+                })
                 .when('/', {
                     controller: 'ListCtrl',
                     templateUrl: 'views/list.html'

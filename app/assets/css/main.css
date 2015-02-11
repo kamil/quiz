@@ -5,3 +5,16 @@ code {
 body {
 	margin-top: 50px;
 }
+
+.answers {
+	border-top: none;
+	border-radius: 0px 0px 5px 5px;
+	box-shadow: none;
+	border-color: #DDDDDD;
+}
+
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}

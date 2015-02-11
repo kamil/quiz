@@ -84,7 +84,7 @@ angular.module('quiz')
             } else {
                 $scope.question = {
                     question: "",
-                    answers: { 1: "", 2: "", 3: "", 4: "" }
+                    answers: [{text:""}, {text:""}, {text:""}, {text:""} ]
                 };
             }
 

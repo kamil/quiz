@@ -1,6 +1,17 @@
+<div style="width:800px; height:600px; border: 1px solid black;">
 <h2>Question:</h2>
-<div ng-bind-html="markedQuestion" />
-
+<div ng-bind-html="mdQuestion.question" />
 <h3>Answers:</h3>
+<div class="container">
+	<div class="row" ng-repeat="answer in mdQuestion.answers">
+		<div class="col-md-1">
+			<input type="radio" />
+		</div>
+		<div class="col-md-11">
+			<div ng-bind-html="answer.text" />
+		</div>
+	</div>
+</div>
+</div>
 
 <button ng-click="add()" class="btn btn-primary">Back</button>

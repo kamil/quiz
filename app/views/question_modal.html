@@ -25,14 +25,14 @@
 		</div>
 		<div role="tabpanel">
 			<ul class="nav nav-tabs" role="tablist">
-				<li ng-repeat="(key,answer) in question.answers" role="presentation" ng-class="{active: key==1}">
-					<a href data-target="#answerTab{{key}}" role="tab" data-toggle="tab">Answer #{{key}}</a>
+				<li ng-repeat="answer in question.answers" role="presentation" ng-class="{active: $index==0}">
+					<a href data-target="#answerTab{{$index}}" role="tab" data-toggle="tab">Answer #{{$index+1}}</a>
 				</li>
 			</ul>
 			<div class="tab-content" style="">
-				<div ng-repeat="(key,answer) in question.answers" role="tabpanel" class="tab-pane" ng-class="{active: key==1}" id="answerTab{{key}}">
-					<div  class="form-group">
-						<textarea style="border-top:0;" rows="5" id="answerTab{{key}}" name="answer_{{key}}" ng-model="question.answers[key]" type="text" placeholder="Answer #{{key}}" class="form-control answers" required /></textarea>
+				<div ng-repeat="answer in question.answers" role="tabpanel" class="tab-pane" ng-class="{active: $index==0}" id="answerTab{{$index}}">
+					<div class="form-group">
+						<textarea style="border-top:0;" rows="5" id="answerTab{{$index}}" name="answer_{{$index}}" ng-model="question.answers[$index].text" type="text" placeholder="Answer #{{$index+1}}" class="form-control answers" required /></textarea>
 					</div>
 				</div>
 			</div>
